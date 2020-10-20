@@ -13,7 +13,7 @@ namespace GuessGameApi.Repository
             {
                 Id = 1,
                 UId = "q1w2e3r4",
-                Number = "12345",
+                Number = 12345,
                 GuessCount = 19,
                 DateTime = DateTime.Now
             },
@@ -21,7 +21,7 @@ namespace GuessGameApi.Repository
             {
                 Id = 2,
                 UId = "5t6z7u8i",
-                Number = "67890",
+                Number = 67890,
                 GuessCount = 71,
                 DateTime = DateTime.UtcNow
             },
@@ -29,7 +29,7 @@ namespace GuessGameApi.Repository
             {
                 Id = 3,
                 UId = "q1w2e3r4",
-                Number = "10292",
+                Number = 10292,
                 GuessCount = 11,
                 DateTime = DateTime.Now.AddDays(1)
             }

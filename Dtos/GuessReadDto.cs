@@ -8,7 +8,7 @@ namespace GuessGameApi.Dtos
 
         public string UId { get; set; }
 
-        public string Number { get; set; }
+        public int Number { get; set; }
 
         public int GuessCount { get; set; }
 

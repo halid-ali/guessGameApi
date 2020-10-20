@@ -13,8 +13,7 @@ namespace GuessGameApi.Model
         public string UId { get; set; }
 
         [Required]
-        [MaxLength(9)]
-        public string Number { get; set; }
+        public int Number { get; set; }
 
         [Required]
         public int GuessCount { get; set; }
