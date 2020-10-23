@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using GuessGameApi.Model;
 
-namespace GuessGameApi.Repository
+namespace GuessGameApi.Repository.MockRepo
 {
     public class MockRepository : IGuessRepository
     {

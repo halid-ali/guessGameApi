@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using GuessGameApi.Model;
 
-namespace GuessGameApi.Repository
+namespace GuessGameApi.Repository.SqlRepo
 {
     public class SqlGuessRepository : IGuessRepository
     {
-        private GuessContext _context;
+        private SqlGuessContext _context;
 
-        public SqlGuessRepository(GuessContext context)
+        public SqlGuessRepository(SqlGuessContext context)
         {
             _context = context;
         }

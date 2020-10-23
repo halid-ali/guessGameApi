@@ -4,6 +4,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using AutoMapper;
 using GuessGameApi.Repository;
+using GuessGameApi.Repository.MySqlRepo;
+using GuessGameApi.Repository.SqlRepo;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -35,10 +37,14 @@ namespace GuessGameApi
                     s.SerializerSettings.ContractResolver = new CamelCasePropertyNamesContractResolver();
                 }
             );
-            services.AddDbContext<GuessContext>(
-                opt => opt.UseSqlServer(Configuration.GetConnectionString("LocalhostConnection")));
             services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
-            services.AddScoped<IGuessRepository, SqlGuessRepository>();
+            
+            services.AddTransient<MySqlGuessRepository>(_ => new MySqlGuessRepository());
+            services.AddScoped<IGuessRepository, MySqlGuessRepository>();
+            
+            // services.AddDbContext<SqlGuessContext>(
+            //     opt => opt.UseSqlServer(Configuration.GetConnectionString("LocalhostConnection")));
+            //services.AddScoped<IGuessRepository, SqlGuessRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
